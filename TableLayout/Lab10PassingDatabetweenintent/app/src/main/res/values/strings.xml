@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab 10: Form Output on Secondary Intent</string>
+    <string name="fullName">Full Name</string>
+    <string name="userName">Username</string>
+    <string name="password">Password</string>
+    <string-array name="selectItems">
+        <item>item 1</item>
+        <item>item 2</item>
+        <item>item 3</item>
+    </string-array>
+</resources>

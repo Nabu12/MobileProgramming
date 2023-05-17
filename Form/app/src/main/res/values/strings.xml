@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Form</string>
+    <string name="title">Membership Form</string>
+    <string name="name">FullName</string>
+    <string name="gender">Gender</string>
+        <string name="m">M</string>
+    <string name="f">F</string>
+    <string name="other">Other</string>
+    <string name="current_weight">Current_Weight</string>
+    <string name="height">Height</string>
+    <string name="goal_weight">Goal_Weight</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="conditions">Conditions</string>
+
+</resources>
