@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String NAME = "name";
     public static final String EMAIL = "email";
      private SQLiteDatabase sqLiteDatabase;
-    private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("+ ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
+    private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("+ ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
             + NAME + " TEXT NOT NULL,"
             + EMAIL + " TEXT NOT NULL);";
 
@@ -51,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 public List<EmployeeModel> getEmployeeList(){
-        String sql = "select * from " +TABLE_NAME;
+        String sql = "select * from " + TABLE_NAME;
         sqLiteDatabase = this.getReadableDatabase();
         List<EmployeeModel> storeEmployee = new ArrayList<>();
     Cursor cursor = sqLiteDatabase.rawQuery(sql,null);

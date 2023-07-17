@@ -21,9 +21,11 @@ public class ViewEmployeeActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        List<EmployeeModel>employeeModels = databaseHelper.getEmployeeList();
+        List<EmployeeModel> employeeModels = databaseHelper.getEmployeeList();
         if(employeeModels.size()>0){
             EmployeeAdapter employeeAdapter = new  EmployeeAdapter(employeeModels,ViewEmployeeActivity.this);
+            recyclerView.setAdapter(employeeAdapter);
+
         }else{
             Toast.makeText(this,"There is no employee in the database",Toast.LENGTH_SHORT).show();
         }
