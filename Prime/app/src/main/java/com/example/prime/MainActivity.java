@@ -12,46 +12,51 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText inputNumber;
+    private EditText numberEditText;
     private Button checkButton;
-
-    private TextView resultText;
+    private TextView resultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prime_number);
 
-        inputNumber = findViewById(R.id.input_number);
+        numberEditText = findViewById(R.id.numberEditText);
         checkButton = findViewById(R.id.check_button);
-        resultText = findViewById(R.id.result_text);
+        resultTextView = findViewById(R.id.result_text);
 
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                int number = Integer.parseInt((inputNumber.getText().toString()));
-                if(isPrime(number)) {
-                    resultText.setText(number + "is a prime number");
-                }else {
-                    resultText.setText(number+" is not prime number");
+            public void onClick(View v) {
+                String inputString = numberEditText.getText().toString();
+
+                try {
+                    int number = Integer.parseInt(inputString);
+                    boolean isPrime = isPrimeNumber(number);
+
+                    if (isPrime) {
+                        resultTextView.setText(number + " is a prime number");
+                    } else {
+                        resultTextView.setText(number + " is not a prime number");
+                    }
+                } catch (NumberFormatException e) {
+                    resultTextView.setText("Invalid input");
                 }
-                }
-            });
-        }
-        public static boolean isPrime(int n){
-        if(n<=1){
+            }
+        });
+    }
+
+    private boolean isPrimeNumber(int number) {
+        if (number <= 1) {
             return false;
         }
-        for (int i=2;i<= Math.sqrt(n);i++){
-            if (n%i==0){
-                return  false;
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
             }
-            }
-            return true;
+        }
+
+        return true;
     }
 }
-
-
-
-
-

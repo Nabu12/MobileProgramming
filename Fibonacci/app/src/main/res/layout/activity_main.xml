@@ -1,14 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fibonaciTextView"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
+        android:text="Fibonacci Series"
+        android:textSize="24sp"
+        android:layout_centerInParent="true" />
 
-        />
+    <Button
+        android:id="@+id/generateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Generate" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
